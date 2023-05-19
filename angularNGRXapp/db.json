@@ -11,6 +11,12 @@
       "author": "Não Sei",
       "title": "Segunda Guerra Mundial",
       "cost": 25
+    },
+    {
+      "id": 3,
+      "author": "Simão Pereira",
+      "title": "Simão Pereira",
+      "cost": 1000
     }
   ]
 }

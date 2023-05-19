@@ -15,6 +15,9 @@
             <li class="list-group-item">{{ book.cost }}</li>
           </ul>
         </div>
+        <div class="card-body">
+          <a class="btn btn-dark btn-sm" [routerLink]="['/edit', book.id]">Edit</a>
+        </div>
       </div>
     </div>
   </div>

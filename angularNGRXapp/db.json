@@ -4,13 +4,13 @@
       "id": 1,
       "title": "Harry Potter",
       "author": "J.K Rowling",
-      "cost": 300
+      "cost": 500
     },
     {
       "id": 2,
-      "author": "Não Sei",
+      "author": "Não Sei, Nem eu",
       "title": "Segunda Guerra Mundial",
-      "cost": 25
+      "cost": 275
     },
     {
       "id": 3,

@@ -29,3 +29,13 @@ export const updateBookAPISuccess = createAction(
   '[Books API] invoke update books API Sucess',
   props<{ response: Book }>()
 );
+
+export const invokeDeleteBookAPI = createAction(
+    '[Books API] invoke delete books API',
+    props<{ id: number }>()
+  );
+  
+  export const deleteBookAPISuccess = createAction(
+    '[Books API] invoke delete books API Sucess',
+    props<{ id:number }>()
+  );

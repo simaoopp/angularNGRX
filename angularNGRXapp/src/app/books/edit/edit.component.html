@@ -1,36 +1,44 @@
 <div class="container">
-    <legend>Update Book</legend>
-    <div class="mb-3">
-      <label for="txtName" class="form-label">Name of Book</label>
-      <input
-        type="text"
-        [(ngModel)]="bookForm.title"
-        id="txtName"
-        class="form-control"
-      />
-    </div>
-  
-    <div class="mb-3">
-      <label for="txtAuthor" class="form-label">Author</label>
-      <input
-        type="text"
-        [(ngModel)]="bookForm.author"
-        id="txtAuthor"
-        class="form-control"
-      />
-    </div>
-  
-    <div class="mb-3">
-      <label for="txtCost" class="form-label"></label>
-      <input
-        type="number"
-        [(ngModel)]="bookForm.cost"
-        id="txtCost"
-        class="form-control"
-      />
-    </div>
-    <button type="button" class="btn btn-dark btn-sm" (click)="update()">
-      Update
-    </button>
+  <legend>Update Book</legend>
+  <div class="mb-3">
+    <label for="txtImg" class="form-label">URL Image of Book</label>
+    <input
+      type="text"
+      [(ngModel)]="bookForm.img"
+      id="txtImg"
+      class="form-control"
+    />
   </div>
-  
+  <div class="mb-3">
+    <label for="txtName" class="form-label">Name of Book</label>
+    <input
+      type="text"
+      [(ngModel)]="bookForm.title"
+      id="txtName"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="txtAuthor" class="form-label">Author</label>
+    <input
+      type="text"
+      [(ngModel)]="bookForm.author"
+      id="txtAuthor"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="txtCost" class="form-label"></label>
+    <input
+      type="number"
+      [(ngModel)]="bookForm.cost"
+      id="txtCost"
+      class="form-control"
+    />
+  </div>
+  <button type="button" class="btn btn-dark btn-sm" (click)="update()">
+    Update
+  </button>
+</div>

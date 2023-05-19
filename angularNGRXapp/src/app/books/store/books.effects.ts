@@ -5,7 +5,9 @@ import {
   booksFetchAPISucess,
   invokeBooksApi,
   invokeSaveBookAPI,
-  saveBookAPISucess,
+  invokeUpdateBookAPI,
+  saveBookAPISuccess,
+  updateBookAPISuccess,
 } from './books.action';
 import { EMPTY, map, switchMap, withLatestFrom } from 'rxjs';
 import { Store, select } from '@ngrx/store';
@@ -48,13 +50,36 @@ export class BooksEffects {
           map((data) => {
             this.appState.dispatch(
               setAPIStatus({
-                apiStatus: { apiResponseMessage: '', apiStatus: 'sucess' },
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
               })
             );
-            return saveBookAPISucess({ response: data });
+            return saveBookAPISuccess({ response: data });
           })
         );
       })
     )
   );
+
+
+  updateBook$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(invokeUpdateBookAPI),
+      switchMap((action) => {
+        this.appState.dispatch(
+          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.bookService.update(action.payload).pipe(
+          map((data) => {
+            this.appState.dispatch(
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+              })
+            );
+            return updateBookAPISuccess ({ response: data });
+          })
+        );
+      })
+    )
+  );
+
 }

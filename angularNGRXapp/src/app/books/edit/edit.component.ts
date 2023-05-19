@@ -27,6 +27,7 @@ export class EditComponent implements OnInit {
     author: '',
     title: '',
     cost: 0,
+    img: ''
   };
 
   ngOnInit(): void {

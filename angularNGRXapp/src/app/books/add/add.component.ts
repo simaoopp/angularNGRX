@@ -24,6 +24,7 @@ export class AddComponent {
     author: '',
     title: '',
     cost: 0,
+    img: ''
   };
 
   save() {
@@ -34,8 +35,9 @@ export class AddComponent {
         this.appState.dispatch(
           setAPIStatus({ apiStatus: { apiStatus: '', apiResponseMessage: '' } })
         );
-        this.router.navigateByUrl('');
       }
     });
+    this.router.navigateByUrl('');
+
   }
 }

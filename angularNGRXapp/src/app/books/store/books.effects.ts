@@ -3,7 +3,9 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { BooksService } from '../books.service';
 import {
   booksFetchAPISucess,
+  deleteBookAPISuccess,
   invokeBooksApi,
+  invokeDeleteBookAPI,
   invokeSaveBookAPI,
   invokeUpdateBookAPI,
   saveBookAPISuccess,
@@ -28,9 +30,9 @@ export class BooksEffects {
     this.actions$.pipe(
       ofType(invokeBooksApi),
       withLatestFrom(this.store.pipe(select(selectBooks))),
-      switchMap(([,booksFromStore]) => {
-        if(booksFromStore.length > 0) {
-          return EMPTY
+      switchMap(([, booksFromStore]) => {
+        if (booksFromStore.length > 0) {
+          return EMPTY;
         }
         return this.bookService
           .get()
@@ -60,7 +62,6 @@ export class BooksEffects {
     )
   );
 
-
   updateBook$ = createEffect(() =>
     this.actions$.pipe(
       ofType(invokeUpdateBookAPI),
@@ -75,11 +76,31 @@ export class BooksEffects {
                 apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
               })
             );
-            return updateBookAPISuccess ({ response: data });
+            return updateBookAPISuccess({ response: data });
           })
         );
       })
     )
   );
 
+  deleteBook$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(invokeDeleteBookAPI),
+      switchMap((action) => {
+        this.appState.dispatch(
+          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.bookService.delete(action.id).pipe(
+          map((data) => {
+            this.appState.dispatch(
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+              })
+            );
+            return deleteBookAPISuccess({ id: action.id });
+          })
+        );
+      })
+    )
+  );
 }

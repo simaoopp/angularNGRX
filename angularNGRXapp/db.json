@@ -4,19 +4,15 @@
       "id": 1,
       "title": "Harry Potter",
       "author": "J.K Rowling",
-      "cost": 500
-    },
-    {
-      "id": 2,
-      "author": "Não Sei, Nem eu",
-      "title": "Segunda Guerra Mundial",
-      "cost": 275
+      "cost": 550,
+      "img": "https://thumbs.web.sapo.io/?W=775&H=0&delay_optim=1&webp=1&epic=M2Q3OFcQxbUJvMWhfatWjj5f8TwiNf17rDEDRG8164MgCfM06Tffmws6MDigXREod3fDE7akZB10UaL7KwPCNpzMG4Y6ESo/kA0gUh0tVCDcGYo="
     },
     {
       "id": 3,
-      "author": "Simão Pereira",
-      "title": "Simão Pereira",
-      "cost": 1000
+      "author": "Phil Jackson",
+      "title": "The Mamba Mentality. How To Play: How I Play ",
+      "cost": 100,
+      "img": "https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/c31cf4fa-60cc-4e3d-ba15-9f5188051785/GF183_TK1_0001.jpeg?format=1500w"
     }
   ]
 }
